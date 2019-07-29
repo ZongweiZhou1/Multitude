@@ -13,7 +13,7 @@ def parser():
     arg_parse = argparse.ArgumentParser(description="inputs to MULTITUDE")
     arg_parse.add_argument("--dataset", type=str, default='zara01', choices=['zara01', 'zara02', 'uni', 'eth', 'hotel'],
                            help='which dataset you need to tracking?')
-    arg_parse.add_argument("--verbose", default='trueLabel', type=str, help='need visualize?')
+    arg_parse.add_argument("--verbose", default='', type=str, help='need visualize?')
     args = arg_parse.parse_args()
     return args
 
