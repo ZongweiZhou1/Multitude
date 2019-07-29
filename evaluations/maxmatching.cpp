@@ -159,8 +159,8 @@ getMaxMatching(vector<int> labels1, vector<int> labels2){
 
 	//double objective = get_objective(lp);//unused
 	get_variables(lp, varweights);
-
-	/*cout << "raw output: " << endl;
+    /*
+	cout << "raw output: " << endl;
 	for (int i = 0; i <invvarMap.size(); i++){
 		cout << varweights[i] << endl;
 	}*/
@@ -196,11 +196,18 @@ getMaxMatching(vector<int> labels1, vector<int> labels2){
 			}
 			//cout<<invvarMap[i].first<<endl;
 			retMap[invvarMap[i].first] = invvarMap[i].second;
+			//cout<<invvarMap[i].first << ":" << invvarMap[i].second<<endl;
 			usedL1Labels.insert(invvarMap[i].first);
 			usedL2Labels.insert(invvarMap[i].second);
 		}
 	    else
 	    {
+	        if(usedL1Labels.find(invvarMap[i].first) != usedL1Labels.end()){
+	            continue;
+	        }
+	        if(usedL2Labels.find(invvarMap[i].second) != usedL2Labels.end()){
+	            continue;
+	        }
 	        retMap[invvarMap[i].first] = -1e2;
 	        //cout<<"varweights[i-1]-1.0  "<< varweights[i-1]-1.0 <<endl;
 	    }
