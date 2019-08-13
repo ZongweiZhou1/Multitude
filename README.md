@@ -47,3 +47,11 @@ The `dataset` is which dataset you want to use.
 without finetune:
 learned Label
 ![learned_label](figs/multitude.png)
+
+#### TODO:
+-[x] how to generate simulated targets captured from cv.
+
+-[x] how to get the matching relation.
+
+-[x] how to use the results guide the tracking.
+
